@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 25.2.0
 
       # 先安装 pnpm（非常关键）
       - name: Setup pnpm
