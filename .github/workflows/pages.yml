@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,20 +21,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: pnpm
 
+      # 先安装 pnpm（非常关键）
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
           version: 9
+          run_install: false  # 先别急着装依赖
 
-      - name: 安装
+      # 再启用 pnpm 的依赖缓存
+      - name: pnpm store
+        run: echo "PNPM_STORE=$(pnpm store path)" >> $GITHUB_ENV
+
+      - name: Install dependencies
         run: pnpm install
 
       - name: Build
         run: pnpm run build
 
-      - name: Upload artifact
+      - name: Upload dist
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -45,6 +51,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
