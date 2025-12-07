@@ -1,3 +1,15 @@
 ﻿<template>
-    <h1>Welcome to Zero!</h1>
+    <div class="main-container">
+        <h1>哈吉生命</h1>
+        <p>欢迎来到哈吉生命的首页！</p>
+    </div>
 </template>
+<style scoped>
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
