@@ -1,0 +1,29 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  padding: 0;
+  /* width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden; */
+}
+
+#app {
+  width: 100%;
+  /* overflow-x: auto;
+  overflow-y: auto; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1.36;
+}
