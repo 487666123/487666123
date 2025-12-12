@@ -6,7 +6,7 @@ import { RouterView } from 'vue-router';
 <template>
   <div class="container">
     <header>
-      <h3>哈基生命科技无限公司</h3>
+      <h3>哈基生命科技公司</h3>
     </header>
     <main>
       <RouterView />
@@ -42,7 +42,8 @@ import { RouterView } from 'vue-router';
 
 .container header {
   grid-column: 1 / span 3;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12);
 
   display: flex;
   flex-direction: column;
@@ -60,7 +61,8 @@ import { RouterView } from 'vue-router';
 
 .container footer {
   grid-column: 1 / span 3;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  border-top: 1px solid #eee;
 
   display: flex;
 
